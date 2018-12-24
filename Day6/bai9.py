@@ -1,25 +1,41 @@
 m,n = map(int,input().split())
 a = []
-Mat = []
+Matx = []
 for i in range(m):
     x = list(map(int,input().split()))
-    mat = [1]
+    mat = []
     maxx = x[0]
     tmp_id = 0
     for j in range(1,n):
-        if x[j]>maxx:
+        if x[j] > maxx:
             maxx = x[j]
+    for j in range(n):
+        if x[j] == maxx:
             mat.append(1)
-            mat[tmp_id] = 0
-            tmp_id = j
-        elif: 
-            
         else:
             mat.append(0)
-    Mat.append(mat)
+    # print(mat)
+    Matx.append(mat)
     a.append(x)
+
+Maty = [[0 for y in range(n)] for x in range(m)]
+for j in range(n):
+    minn = a[0][j]
+    for i in range(1,m):
+        if a[i][j] < minn:
+            minn = a[i][j]
+    for i in range(m):
+        if a[i][j] == minn:
+            Maty[i][j] = 1
+# print(Maty)
+count = 0
 for i in range(m):
     for j in range(n):
-        if Mat[i] == 1:
+        if (Matx[i][j] == 1) and (Maty[i][j]==1):
+            count+=1
+
+print(count)
+
+
             
 
