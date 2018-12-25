@@ -59,6 +59,8 @@ for j in range(1,n):
         if a[h][k] < maxx:
             Matcp[h][k] = 0
         h=h-1
+
+# print(Matcp)
 for j in reversed(range(n)):
     h = 0
     maxx = a[0][j]
@@ -73,21 +75,25 @@ for j in reversed(range(n)):
         h+=1
 for i in range(1,m):
     maxx=a[i][0]
+    h = i
     for k in range(n-i):
-        if a[i][k] > maxx:
-            maxx = a[i][k]
+        if a[h][k] > maxx:
+            maxx = a[h][k]
+        h+=1  
+    h=i
     for k in range(n-i):
         # print(maxx)
-        if a[i][k] < maxx:
-            Matcp[i][k] = 0
-print(Matcp)
+        if a[h][k] < maxx:
+            Matcp[h][k] = 0
+        h+=1
+# print(Matcp)
 cnt=0 
 for i in range(m):
     for j in range(n):
         if Matx[i][j]==1 and Maty[i][j]==1 and Matcp[i][j]==1:
             cnt+=1
-print(Matx)
-print(Maty)
-# print(cnt)
+# print(Matx)
+# print(Maty)
+print(cnt)
 # print(Matcp)
 # for i in range()
