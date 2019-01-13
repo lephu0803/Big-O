@@ -9,6 +9,7 @@ class Fraction:
             a = b
             b = r
         return a 
+
     def reduceFraction(self):
         if self.nu == 0:
             self.de = 1
@@ -23,6 +24,7 @@ class Fraction:
         p3.de = self.de * p2.de 
         p3.reduceFraction()
         return p3
+        
     def __str__(self):
         s = '{0} {1}'.format(self.nu, self.de)
         return s

@@ -23,12 +23,18 @@ if __name__ == "__main__":
         a.append(BangMau(color, length))
     a.sort(key=lambda x: x.get_color())
     x = a[0]
+    b=[]
+    count = 1
     for i in range(1,n):
         if a[i].get_color() == a[i-1].get_color():
             x.sum_length(a[i])
         else:
-            print(x)
+            b.append(x)
+            count +=1
             x = a[i]
-    print(x)
+    b.append(x)
+    print(count)
+    for i in b:
+        print(i)
 
 

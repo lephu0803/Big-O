@@ -1,14 +1,14 @@
 class Staff:
     def __init__(self, idx=0, name=0, year=0):
-        self.idx = int(idx)
+        self.idx = idx
         self.name = name 
-        self.year = int(year)
+        self.year = year
 
     def get_year(self):
-        return 2019-self.year
+        return int(self.year)
     
     def get_idx(self):
-        return self.idx
+        return int(self.idx)
 
     def __str__(self):
         return '{} {} {}'.format(self.idx, self.name, self.year)
@@ -26,7 +26,7 @@ if __name__ == "__main__":
             if int(year) < x.get_year():
                 x = Staff(idx, name, year)
             elif int(year) == x.get_year():
-                if idx < x.get_idx():
+                if int(idx) < x.get_idx():
                     x = Staff(idx, name, year)
         print(x)
 
